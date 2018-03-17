@@ -17,9 +17,12 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 
 class DQNCartPoleSolver():
-    def __init__(self, n_episodes=1000, n_win_ticks=195, max_env_steps=None, gamma=1.0, epsilon=1.0, epsilon_min=0.01, epsilon_log_decay=0.995, alpha=0.01, alpha_decay=0.01, batch_size=64, monitor=None, quiet=False, visualize=False):
+    def __init__(
+            self, env_id, n_episodes=1000, n_win_ticks=195, max_env_steps=None, gamma=1.0,
+            epsilon=1.0, epsilon_min=0.01, epsilon_log_decay=0.995, alpha=0.01, alpha_decay=0.01,
+            batch_size=64, monitor=None, quiet=False, visualize=False):
         self.memory = deque(maxlen=100000)
-        self.env = gym.make('CartPole-v0')
+        self.env = gym.make(env_id)
         if visualize: self.env.render()
         if monitor: self.env = gym.wrappers.Monitor(self.env, monitor, force=True)
         self.gamma = gamma
@@ -102,14 +105,15 @@ if __name__ == '__main__':
     parser.add_argument('--monitor', help='path to save monitor data')
     parser.add_argument('--visualize', help='visualize model as it runs', action='store_true')
     parser.add_argument('--stateout', help='path to save state sequences of final learned policy')
+    parser.add_argument('--env', help='gym environment id string', default='CartPole-v0')
     args = parser.parse_args()
 
     agent = DQNCartPoleSolver(
-            n_episodes=args.episodes, monitor=args.monitor, visualize=args.visualize)
+            args.env, n_episodes=args.episodes, monitor=args.monitor, visualize=args.visualize)
     agent.run()
 
     if args.stateout:
         with open(args.stateout, 'w') as f:
-            print([[list(state.flatten()), list(next_state.flatten())] for state, _, _, next_state, _ in agent.memory][0])
-            f.write(json.dumps(
-                [[list(state.flatten()), list(next_state.flatten())] for state, _, _, next_state, _ in agent.memory]))
+            f.write(json.dumps([
+                [list(state.flatten()), list(next_state.flatten())]
+                for state, _, _, next_state, _ in agent.memory]))
