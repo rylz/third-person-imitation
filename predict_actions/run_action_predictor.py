@@ -15,10 +15,10 @@ def run_ep(env, model):
     n_inputs = model.input_shape[1] // len(state)
     model_input = np.array(list(state) * n_inputs)
     done = False
+    obs = []
+    acs = []
+    rews = []
     while not done:
-        obs = []
-        acs = []
-        rews = []
         model_input = np.concatenate((model_input[len(state):], state))
         action = model.predict(np.reshape(np.array(model_input), (1, -1)))
         next_state, reward, done, _ = env.step(action)
@@ -49,7 +49,8 @@ if __name__ == '__main__':
         acs_all.append(acs)
         rews_all.append(rews)
         total_rew = sum(rews)
-        print(f'Episode {ep} final reward: {rews[-1],.3}, total reward: {total_rew,.3}')
+        ep_len = len(rews)
+        print(f'Episode {ep} final reward: {rews[-1],.3}, total reward: {total_rew,.3}, steps: {ep_len}')
 
     if args.out:
         obs = np.array(obs)
