@@ -10,17 +10,22 @@ from keras.models import load_model
 
 def run_ep(env, model):
     state = env.reset()
+    # some of our models use one state, some backtrack by some number of states in a rolling window
+    # here we initially use several copies of the initial state, then roll the window
+    n_inputs = model.input_shape[1] // len(state)
+    model_input = np.array(list(state) * n_inputs)
     done = False
     while not done:
         obs = []
         acs = []
         rews = []
-        state = np.reshape(np.array(state), (1, -1))
-        action = model.predict(state)
+        model_input = np.concatenate((model_input[len(state):], state))
+        action = model.predict(np.reshape(np.array(model_input), (1, -1)))
         next_state, reward, done, _ = env.step(action)
         obs.append(state)
         acs.append(action)
         rews.append(reward)
+        state = next_state
 
     return np.array(obs), np.array(acs), np.array(rews)
 
