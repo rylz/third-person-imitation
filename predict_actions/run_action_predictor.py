@@ -48,8 +48,11 @@ if __name__ == '__main__':
         obs_all.append(obs)
         acs_all.append(acs)
         rews_all.append(rews)
-        print(f'Episode {ep} final reward: {rews[-1],.3}')
+        total_rew = sum(rews)
+        print(f'Episode {ep} final reward: {rews[-1],.3}, total reward: {total_rew,.3}')
 
     if args.out:
-        obs, acs, rews = map(np.array, [obs_all, acs_all, rews_all])
+        obs = np.array(obs)
+        acs = np.array(acs)
+        rews = np.array(rews)
         np.savez(args.out, obs=obs, acs=acs, rews=rews)
