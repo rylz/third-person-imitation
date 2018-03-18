@@ -1,0 +1,16 @@
+Logging to /tmp/HalfCheetah-v2_1/
+Total trajectorues: 1
+Total transitions: 1000
+Average returns: 809.771583
+Std for returns: 0.000000
+Pretraining with Behavior Cloning...
+Training loss: 1.6006969213485718, Validation loss: 1.2141512632369995
+Training loss: 0.029461761936545372, Validation loss: 0.06474822014570236
+Training loss: 0.0017258292064070702, Validation loss: 0.02709345519542694
+Training loss: 0.0003008719068020582, Validation loss: 0.026599710807204247
+Training loss: 0.00013445463264361024, Validation loss: 0.03330020606517792
+Training loss: 6.86755302012898e-05, Validation loss: 0.034737635403871536
+Training loss: 2.517902794352267e-05, Validation loss: 0.034553635865449905
+Training loss: 1.9903558495570906e-05, Validation loss: 0.034351084381341934
+Training loss: 1.5269133655237965e-05, Validation loss: 0.033785104751586914
+Training loss: 1.2016472282994073e-05, Validation loss: 0.03375126048922539

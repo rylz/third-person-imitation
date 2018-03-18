@@ -1,0 +1,16 @@
+Logging to /tmp/Walker2d-v2_10/
+Total trajectorues: 10
+Total transitions: 8649
+Average returns: 3127.562988
+Std for returns: 755.372996
+Pretraining with Behavior Cloning...
+Training loss: 1.2454299926757812, Validation loss: 1.0185543298721313
+Training loss: 0.02764827013015747, Validation loss: 0.0225919671356678
+Training loss: 0.004530321806669235, Validation loss: 0.0007742742891423404
+Training loss: 0.0008021509856916964, Validation loss: 4.042705040774308e-05
+Training loss: 0.0005748720723204315, Validation loss: 8.30705994303571e-06
+Training loss: 0.00040169130079448223, Validation loss: 3.7907361729594413e-06
+Training loss: 0.00019581661035772413, Validation loss: 3.21918491863471e-06
+Training loss: 0.0002788504061754793, Validation loss: 3.088973244302906e-06
+Training loss: 0.00011351027205819264, Validation loss: 1.3506521554518258e-06
+Training loss: 0.00020151738135609776, Validation loss: 2.0029542611155193e-06

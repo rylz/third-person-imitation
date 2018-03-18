@@ -1,0 +1,16 @@
+Logging to /tmp/Humanoid-v2_10/
+Total trajectorues: 10
+Total transitions: 1200
+Average returns: 623.555234
+Std for returns: 159.129041
+Pretraining with Behavior Cloning...
+Training loss: 1.0204554796218872, Validation loss: 0.9865970015525818
+Training loss: 0.023151962086558342, Validation loss: 0.022313326597213745
+Training loss: 0.0007654536748304963, Validation loss: 0.0007961926166899502
+Training loss: 4.9484155169920996e-05, Validation loss: 5.0779603043338284e-05
+Training loss: 1.4554183508153073e-05, Validation loss: 1.3797021892969497e-05
+Training loss: 7.919386007415596e-06, Validation loss: 7.510999694204656e-06
+Training loss: 5.3953499445924535e-06, Validation loss: 5.097964731248794e-06
+Training loss: 4.123754479223862e-06, Validation loss: 3.772171339733177e-06
+Training loss: 3.449384166742675e-06, Validation loss: 3.0477146992780035e-06
+Training loss: 2.848859367077239e-06, Validation loss: 2.485840468580136e-06

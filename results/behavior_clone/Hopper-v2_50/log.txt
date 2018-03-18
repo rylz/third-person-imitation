@@ -1,0 +1,16 @@
+Logging to /tmp/Hopper-v2_50/
+Total trajectorues: 50
+Total transitions: 50000
+Average returns: 3570.304346
+Std for returns: 2.931379
+Pretraining with Behavior Cloning...
+Training loss: 1.0480238199234009, Validation loss: 0.9951902627944946
+Training loss: 0.022777482867240906, Validation loss: 0.022600829601287842
+Training loss: 0.0010775035480037332, Validation loss: 0.0007721319561824203
+Training loss: 0.0002896227815654129, Validation loss: 3.3711534342728555e-05
+Training loss: 0.0005031885229982436, Validation loss: 6.029467385815224e-06
+Training loss: 0.00026079450617544353, Validation loss: 2.9925922717666253e-06
+Training loss: 2.831704478012398e-06, Validation loss: 4.260637979314197e-06
+Training loss: 7.209058094304055e-05, Validation loss: 2.2732456272933632e-06
+Training loss: 7.687672768952325e-05, Validation loss: 1.1942488526983652e-06
+Training loss: 0.00011983781587332487, Validation loss: 2.1278201529639773e-06
